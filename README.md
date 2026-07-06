@@ -1,6 +1,6 @@
 # 🎤 RhymesAI
 
-![](https://github.com/Eventin111/RhymesAI/blob/main/RhymeAI.png)
+![](https://github.com/Eventin111/RhymesAI/blob/main/RhymeAI%20(перетянутый)%202.png)
 
 > Сервис генерации русских рифм и текстов песен на основе дообученной языковой модели **ruGPT3 Large**.
 
@@ -107,4 +107,5 @@ https://hub.docker.com/r/yarstar/rhymesai
 
 ## 📸 Интерфейс
 
+![](https://github.com/Eventin111/RhymesAI/blob/main/RhymeAI%20(перетянутый).png)
 
