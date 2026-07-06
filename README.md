@@ -1,5 +1,7 @@
 # 🎤 RhymesAI
 
+(https://github.com/Eventin111/RhymesAI/blob/main/RhymeAI.png)
+
 > Сервис генерации русских рифм и текстов песен на основе дообученной языковой модели **ruGPT3 Large**.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
