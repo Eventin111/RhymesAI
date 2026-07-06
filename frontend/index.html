@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RhymesAI — Генератор текстов песен</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111;
+      --fg: #fff;
+      --accent: #E34542;
+      --muted: #888;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    header {
+      padding: 48px 0 24px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: -2px;
+      color: var(--accent);
+    }
+    .subtitle {
+      margin-top: 16px;
+      font-size: 1.5rem;
+      color: var(--muted);
+    }
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 32px 16px;
+    }
+    .big-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    .desc {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .request-container {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .request-container h2 {
+        font-size: 1.3rem; 
+        color: var(--muted); 
+        margin-bottom: .7em;
+    }
+    #promptInput {
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+        padding: 18px 20px;
+        border: none;
+        border-radius: 16px;
+        background-color: var(--accent);
+        color: #fff; 
+        font-size: 1.15rem; 
+        outline: none; 
+        margin-bottom: .7em;
+    }
+    #promptInput::placeholder {
+        color: #fff8; 
+        opacity: .9;
+    }
+    .request-status {
+        color: var(--muted); 
+        font-size: .98rem;
+    }
+    .generate-button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 16px;
+        background-color: var(--accent);
+        color: #fff;
+        font-size: 1.15rem;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .generate-button:hover {
+        background-color: #c73836;
+    }
+    #taskId {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: .98rem;
+    }
+    .examples {
+      margin-top: 64px;
+      background: #181818;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 4px 32px rgba(0,0,0,.15);
+    }
+    .examples h2 {
+        text-align: center; 
+        font-size: 1.5rem; 
+        margin-bottom: .7em;
+    }
+    .features-list {
+        list-style-type: none; 
+        padding-left: .5em; 
+        color: var(--muted); 
+        line-height: 1.5em; 
+        font-size: 1.15rem; 
+    }
+    .features-list li::before { 
+       content: ""; 
+       display: inline-block; 
+       width: .8em; 
+       height: .8em; 
+       background-color: var(--accent); 
+       border-radius: .2em; 
+       margin-right: .5em; 
+    }
+    @media (max-width: 600px) {
+        header { padding-top: 28px; }
+        main { padding-left: .5em; padding-right: .5em; }
+        .examples { padding: .8em; }
+        .big-title { font-size: max(2.5rem, 6vw); }
+        .logo { font-size: max(2rem, 4vw); }
+        .subtitle { font-size: max(1.3rem, 3vw); }
+    }
+  </style>
+</head>
+<body>
+<header>
+   <div class="logo">RhymesAI.</div>
+   <div class="subtitle">Нейросеть для генерации текстов песен</div>
+</header>
+
+<main>
+   <div class="big-title">
+     Индустрия музыки<br>на новом уровне
+   </div>
+   <div class="desc">
+     Генерируй уникальные тексты для треков в любом стиле.<br>
+     Русская рифма и стиль — теперь в твоих руках.
+   </div>
+
+   <section class="request-container">
+     <h2>Генерация запроса</h2>
+     <input type="text" id="promptInput" placeholder="Введите ваш запрос..." />
+     <button class="generate-button" onclick="generateRhyme()">Генерировать</button>
+     <div id="taskId" class="request-status"></div>
+     <div id="response" class="request-status">Статус запроса: Ожидание ввода.</div>
+   </section>
+
+   <section class="examples">
+     <h2>Наши возможности:</h2>
+     <ul class="features-list">
+       <li>🎵 Генерация текстов песен в различных жанрах.</li>
+       <li>📝 Подбор рифм и создание уникальных строк.</li>
+       <li>🔄 Возможность редактирования и доработки текстов.</li>
+     </ul>
+   </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
